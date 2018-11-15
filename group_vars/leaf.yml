@@ -1,0 +1,5 @@
+---
+
+leaf_ports:
+  - Ethernet1/1
+  - Ethernet1/2

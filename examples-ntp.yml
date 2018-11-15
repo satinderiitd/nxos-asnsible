@@ -1,0 +1,15 @@
+---
+- name: ntp example
+  hosts: all-devices 
+  connection: local
+  gather_facts: no
+
+  tasks:
+
+# # Set NTP Server with parameters
+#   - nxos_ntp: server=1.2.3.4 key_id=32 prefer=enabled host="{{inventory_hostname}}" state=present
+
+  # Remove NTP Server
+  - name: "Remove NTP Server"
+    nxos_ntp: state=absent server=1.2.3.4 host={{ inventory_hostname }}
+    register: returned

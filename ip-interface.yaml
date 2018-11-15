@@ -1,0 +1,22 @@
+# ---
+# - name: send configuration commands to IOS
+#   telnet:
+#     user: cisco
+#     password: cisco
+#     login_prompt: "Username: "
+#     prompts:
+#       - "[>|#]"
+#     command:
+#       - terminal length 0
+#       - configure terminal
+#       - hostname ios01
+
+- name: configure ethernet1/5 ip address
+  nxos_ip_interface:
+    interface: ethernet1/5
+    addr: "10.10.10.1"
+    mask: 30
+    state: present
+    username: cisco
+    password: cisco
+    host: "10.65.127.118 19403"

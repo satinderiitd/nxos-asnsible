@@ -1,0 +1,20 @@
+[access]
+#LON-LAB-POD001-SWA1 ansible_host=
+10.52.232.3
+#LON-LAB-POD001-SWA2 ansible_host=
+10.52.232.4
+
+[core]
+LON-LAB-CORE-RTA1 ansible_host=10.52.232.1
+LON-LAB-CORE-RTA2 ansible_host=10.52.232.2
+
+[all-devices:children]
+access
+core
+
+[all:vars]
+ansible_user=admin
+ansible_ssh_pass=LANdev0ps
+ansible_connection=local
+gather_facts=no
+become=no
