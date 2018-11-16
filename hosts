@@ -1,8 +1,6 @@
 [access]
-#LON-LAB-POD001-SWA1 ansible_host=
-10.52.232.3
-#LON-LAB-POD001-SWA2 ansible_host=
-10.52.232.4
+LON-LAB-POD001-SWA1 ansible_host=10.52.232.3
+LON-LAB-POD001-SWA2 ansible_host=10.52.232.4
 
 [core]
 LON-LAB-CORE-RTA1 ansible_host=10.52.232.1
@@ -14,7 +12,8 @@ core
 
 [all:vars]
 ansible_user=admin
-ansible_ssh_pass=LANdev0ps
-ansible_connection=local
+ansible_password=LANdev0ps
+ansible_connection=network_cli
+ansible_network_os=nxos
 gather_facts=no
 become=no
